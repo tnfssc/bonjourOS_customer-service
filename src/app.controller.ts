@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Query, Body } from '@nestjs/common';
 import { AppService, CustomerEmailOrID } from './app.service';
 
 import { Customer } from 'db-man';
@@ -13,8 +13,8 @@ export class AppController {
   }
 
   @Post()
-  addEditCustomer(@Query() query: Customer) {
-    return this.appService.addEditCustomer(query);
+  addEditCustomer(@Body() body: Customer) {
+    return this.appService.addEditCustomer(body);
   }
 
   @Delete()
