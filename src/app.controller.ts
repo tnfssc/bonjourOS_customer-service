@@ -12,6 +12,11 @@ export class AppController {
     return this.appService.getCustomer(query);
   }
 
+  @Get('/all')
+  getAllCustomers(@Query() query) {
+    return this.appService.getAllCustomers(query);
+  }
+
   @Post()
   addEditCustomer(@Body() body: Customer) {
     return this.appService.addEditCustomer(body);

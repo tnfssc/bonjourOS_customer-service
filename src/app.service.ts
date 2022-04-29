@@ -17,6 +17,9 @@ export class AppService {
       return await db.customer.findUnique({ where: { id } });
     }
   }
+  async getAllCustomers({}: Customer[]) {
+    return await db.customer.findMany();
+  }
   async addEditCustomer({ id, ...customer }: Customer) {
     return await db.customer.upsert({
       where: { id },
